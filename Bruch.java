@@ -30,4 +30,20 @@ public class Bruch {
 		int gemNenner = zNenner * pB2.getNenner();
 		return new Bruch(zaehler, gemNenner);
 	}
+	public Bruch subtrahieren(Bruch pB2) {
+		int zaehler = +(zZaehler * pB2.getNenner()) - (pB2.getZaehler() * zNenner);
+		int gemNenner = zNenner * pB2.getNenner();
+		return new Bruch(zaehler, gemNenner);
+	}
+	public Bruch multiplizieren(Bruch pB2) {
+		int zaehler = zZaehler * pB2.getZaehler();
+		int nenner = zNenner * pB2.getNenner();
+		return new Bruch(zaehler, nenner);
+	}
+	public Bruch dividieren(Bruch pB2) {
+		return multiplizieren(pB2.kehrwert());
+	}
+	public Bruch kehrwert() {
+		return new Bruch(zNenner, zZaehler);
+	}
 }
